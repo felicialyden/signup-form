@@ -1,0 +1,368 @@
+@font-face { 
+  font-family: ubuntu-regular; 
+  src: url('./assets/fonts/Ubuntu-Regular.ttf'); 
+} 
+@font-face { 
+  font-family: ubuntu-bold; 
+  src: url('./assets/fonts/Ubuntu-Bold.ttf'); 
+} 
+@font-face { 
+  font-family: ubuntu-medium; 
+  src: url('./assets/fonts/Ubuntu-Medium.ttf'); 
+} 
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'ubuntu-regular';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: hsl(231, 100%, 99%);
+}
+
+h1 {
+  font-size: 20px;
+  color: hsl(213, 96%, 18%);
+  margin-bottom: 0;
+}
+
+h2 {
+  font-size: 14px;
+  color: hsl(231, 11%, 63%);
+  margin-top: 5px;
+  font-weight: 400;
+}
+
+p {
+  font-size: 14px;
+  color: hsl(213, 96%, 18%);
+}
+
+.hide {
+  visibility:hidden;
+}
+
+.error {
+  color: red;
+  margin-right: 10px;
+  margin-left: auto;
+}
+
+#plan-error {
+  margin-top: 0px;
+  margin-bottom: auto;
+}
+
+#app {
+  background-color: white;
+  border-radius: 10px;
+}
+
+form {
+  padding: 10px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  margin: 10px 20px;
+  width: 500px;
+  height: 500px;
+}
+
+#sidebar {
+  width: 30%;
+  background-image: url('./assets/images/bg-sidebar-desktop.svg');
+  background-size: cover;
+  margin: 10px;
+  border-radius: 10px;
+
+}
+
+.step-number {
+  border: solid white;
+  border-width: 1px;
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+}
+
+.step {
+  font-weight: 300;
+  margin-left: 10px;
+}
+
+.selected-step {
+  color: hsl(213, 96%, 18%);
+  background-color: hsl(231, 100%, 99%);
+  border: solid hsl(231, 100%, 99%);
+  
+}
+
+section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 20px;
+  font-family: 'ubuntu-bold';
+}
+
+#plan-selector {
+  margin-bottom: 10px;
+}
+
+.plan-container {
+  border: solid hsl(229, 24%, 87%);
+  border-radius: 10px;
+  border-width: 2px;
+  background-color: white;
+  width: 120px;
+  height: 140px;
+  padding: 10px;
+  margin: 5px 15px;
+
+}
+
+.plan-container:hover {
+  cursor: pointer;
+  border: solid hsl(243, 100%, 62%);
+  border-width: 2px;
+}
+
+.plan-specifics {
+  margin-bottom: 0px;
+}
+
+.plan {
+  font-family: 'ubuntu-bold';
+  margin-bottom: 0px;
+  margin-top: 30px;
+}
+
+.plan-pricing {
+  font-family: 'ubuntu-regular';
+  margin: 2px 0px;
+}
+
+.offer {
+  font-family: 'ubuntu-regular';
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.toggle {
+  background-color: hsl(231, 100%, 99%);
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.form-input {
+  border: solid hsl(229, 24%, 87%);
+  border-radius: 5px;
+  border-width: 2px;
+  height: 30px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  margin: auto 0px 10px 0px;
+}
+
+button {
+  width: 90px;
+  height: 35px;
+  font-family: 'ubuntu-regular';
+  margin-top: 30px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.next-btn {
+  background-color: hsl(213, 96%, 18%);
+  color: white;
+  border-radius: 5px;
+  border: none;
+  margin-left: auto; 
+  margin-right: 0;
+}
+
+.back-btn {
+  background-color: white;
+  border: none;
+  color: hsl(231, 11%, 63%);
+  margin-right: auto; 
+  margin-left: 0;
+}
+
+.back-btn:hover {
+  color: hsl(213, 96%, 18%);
+}
+
+.add-on {
+  align-items: center;
+  border: solid hsl(229, 24%, 87%);
+  border-radius: 10px;
+  border-width: 2px;
+  background-color: white;
+  margin: 10px 0px 10px 0px;
+  padding: 5px;
+}
+
+.add-on:hover {
+  cursor: pointer;
+  border: solid hsl(243, 100%, 62%);
+  border-width: 2px;
+}
+
+.selected {
+  border-color: hsl(243, 100%, 62%);
+  background-color: hsl(231, 100%, 99%);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 22px;
+  margin: 10px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: hsl(213, 96%, 18%);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 13px;
+  width: 13px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: hsl(213, 96%, 18%);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px hsl(213, 96%, 18%);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+  height: 20px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+#summary {
+  background-color: hsl(231, 100%, 99%);
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+#summary-plan {
+  align-items: center;
+  background-color: hsl(231, 100%, 99%);
+  border-bottom: solid hsl(229, 24%, 87%);
+  border-width: 1px;
+}
+
+.summary-add-on {
+  align-items: center;
+  margin-top: 10px;
+}
+
+#total-price {
+  align-items: center;
+  padding: 10px;
+}
+
+#change {
+  text-decoration: underline;
+}
+
+#change:hover {
+  cursor: pointer;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.bold {
+  font-family: 'ubuntu-bold';
+}
+.regular {
+  font-family: 'ubuntu-regular';
+}
+.medium {
+  font-family: 'ubuntu-medium';
+}
+
+.grey {
+  color: hsl(231, 11%, 63%);
+}
+.dark-blue {
+  color: hsl(213, 96%, 18%);
+}
+.blue {
+  color: hsl(243, 100%, 62%);
+}
+.white {
+  color: white;
+}
+
+.align-left {
+  margin-right: auto;
+  margin-left: 0px;
+}
+.align-right {
+  margin-right: 0px;
+  margin-left: auto;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.center-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
